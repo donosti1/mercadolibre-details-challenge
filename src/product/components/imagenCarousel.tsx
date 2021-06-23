@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Stack, Image} from "@chakra-ui/react";
+import {Stack, Image, useColorModeValue} from "@chakra-ui/react";
 
 import mock from "../mock";
 import {Product} from "../types";
@@ -13,7 +13,8 @@ const ImagenCarousel: React.FC<Props> = ({product = mock.product}) => {
     product.pictures[selectedPicture].secure_url,
   );
   const [idSelectedPicture, setIdSelectedPicture] = useState<number>();
-  let bordeImagen = "blackAlpha.300"; //index == selectedPicture ? "secondary.900" :"secondary.300"
+
+  let bordeImagen = useColorModeValue("blackAlpha.300", "whiteAlpha.600");
   let bordeImagenSelected = "secondary.900"; //index == selectedPicture ? "secondary.900" :"secondary.300"
 
   function handleImageClick(e: any) {
@@ -21,6 +22,7 @@ const ImagenCarousel: React.FC<Props> = ({product = mock.product}) => {
     setImagenDestacada(product.pictures[selectedPicture].secure_url);
     setIdSelectedPicture(selectedPicture);
   }
+  //console.log(product.pictures);
 
   return (
     <>

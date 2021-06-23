@@ -12,3 +12,11 @@ export interface Product extends Record<string, any> {
   condition: string;
   pictures: ProductPicture[];
 }
+
+export interface Pregunta {
+  id: string;
+  text: string;
+  response?: string;
+  isResponse?: boolean;
+  fecha?: Date;
+}

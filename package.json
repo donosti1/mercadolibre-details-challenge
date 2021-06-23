@@ -1,11 +1,14 @@
 {
   "name": "mercadolibre-detail-clone",
   "version": "0.0.0",
+  "homepage": "https://donosti1.github.io/mercadolibre-details-challenge",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "theme": "chakra-cli tokens ./src/theme.ts"
+    "theme": "chakra-cli tokens ./src/theme.ts",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.5.2",
@@ -35,6 +38,7 @@
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "gh-pages": "^3.1.0",
     "prettier": "^2.2.1",
     "typescript": "^4.1.2",
     "vite": "^2.1.5"

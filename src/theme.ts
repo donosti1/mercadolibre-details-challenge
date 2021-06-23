@@ -1,12 +1,17 @@
 import {extendTheme, theme} from "@chakra-ui/react";
+import {mode} from "@chakra-ui/theme-tools";
 
 export default extendTheme({
+  config: {
+    initialColorMode: "dark",
+    useSystemColorMode: false,
+  },
   styles: {
-    global: {
+    global: (props) => ({
       body: {
-        color: "blackAlpha.900",
+        color: mode(undefined, "whiteAlpha.900")(props),
       },
-    },
+    }),
   },
   colors: {
     primary: {
@@ -31,6 +36,13 @@ export default extendTheme({
       700: "#00a650",
       800: "#2968c8",
       900: "#3483fa",
+    },
+    darkMode: {
+      200: "blackAlpha.800",
+      400: `rgba(242,229,80,.9)`,
+      500: `rgba(25, 39, 52, 1)`,
+      600: `#ededed;`,
+      700: `rgba(21,32,43,1)`,
     },
     success: theme.colors.whatsapp,
     error: theme.colors.red,
